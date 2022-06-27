@@ -75,7 +75,7 @@ const submit = () => {
           label="Login"
         />
         <BaseButton
-          to="/dashboard"
+          to="/Dashboard"
           color="info"
           outline
           label="Back"

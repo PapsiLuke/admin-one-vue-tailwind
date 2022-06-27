@@ -30,7 +30,7 @@ if ((!localStorage[darkModeKey] && window.matchMedia('(prefers-color-scheme: dar
 }
 
 /* Default title tag */
-const defaultDocumentTitle = 'Admin One Vue 3 Tailwind'
+const defaultDocumentTitle = ''
 
 /* Collapse mobile aside menu on route change */
 router.beforeEach(() => {
@@ -41,7 +41,7 @@ router.beforeEach(() => {
 router.afterEach(to => {
   /* Set document title from route meta */
   document.title = to.meta?.title
-    ? `${to.meta.title} — ${defaultDocumentTitle}`
+    ? `Pafcpic`
     : defaultDocumentTitle
 
   /* Full screen mode */

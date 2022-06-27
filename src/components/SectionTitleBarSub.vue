@@ -33,10 +33,5 @@ const darkMode = computed(() => mainStore.darkMode)
         {{ title }}
       </h1>
     </div>
-    <BaseButton
-      :icon="mdiCog"
-      :outline="darkMode"
-      small
-    />
   </section>
 </template>

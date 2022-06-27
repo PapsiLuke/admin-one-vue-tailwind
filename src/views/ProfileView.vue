@@ -39,8 +39,6 @@ const submitPass = () => {
 </script>
 
 <template>
-  <SectionTitleBar :title-stack="titleStack" />
-
   <UserCard />
 
   <SectionMain>
@@ -167,6 +165,4 @@ const submitPass = () => {
       </CardBox>
     </div>
   </SectionMain>
-
-  <SectionBottomOtherPages />
 </template>

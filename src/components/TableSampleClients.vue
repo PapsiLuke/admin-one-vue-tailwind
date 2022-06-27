@@ -113,14 +113,13 @@ const checked = (isChecked, client) => {
   <table>
     <thead>
       <tr>
-        <th v-if="checkable" />
+        <th v-if="false" />
         <th />
         <th>Name</th>
-        <th>Company</th>
-        <th>City</th>
-        <th>Progress</th>
-        <th>Created</th>
-        <th />
+        <th>Position</th>
+        <th>Vote %</th>
+        <th class='text-center'>Vote Count</th>
+
       </tr>
     </thead>
     <tbody>
@@ -130,7 +129,7 @@ const checked = (isChecked, client) => {
         :class="[tableTrStyle, index % 2 === 0 ? tableTrOddStyle : '']"
       >
         <TableCheckboxCell
-          v-if="checkable"
+          v-if="false"
           @checked="checked($event, client)"
         />
         <td class="image-cell">
@@ -142,11 +141,8 @@ const checked = (isChecked, client) => {
         <td data-label="Name">
           {{ client.name }}
         </td>
-        <td data-label="Company">
-          {{ client.company }}
-        </td>
-        <td data-label="City">
-          {{ client.city }}
+           <td data-label="Position">
+          {{ client.position }}
         </td>
         <td
           data-label="Progress"
@@ -159,13 +155,10 @@ const checked = (isChecked, client) => {
             {{ client.progress }}
           </progress>
         </td>
-        <td data-label="Created">
-          <small
-            class="text-gray-500 dark:text-gray-400"
-            :title="client.created"
-          >{{ client.created }}</small>
+         <td data-label="vote_count" class='text-center'>
+          {{ client.vote_count }}
         </td>
-        <td class="actions-cell">
+        <!-- <td class="actions-cell">
           <BaseButtons
             type="justify-start lg:justify-end"
             no-wrap
@@ -183,7 +176,7 @@ const checked = (isChecked, client) => {
               @click="isModalDangerActive = true"
             />
           </BaseButtons>
-        </td>
+        </td> -->
       </tr>
     </tbody>
   </table>

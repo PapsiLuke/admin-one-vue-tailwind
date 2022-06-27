@@ -24,6 +24,7 @@ import DividerHorizontal from '@/components/DividerHorizontal.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
 import BaseIcon from '@/components/BaseIcon.vue'
 import NavBarSearch from '@/components/NavBarSearch.vue'
+import { useRouter } from 'vue-router'
 
 const mainStore = useMainStore()
 
@@ -52,11 +53,11 @@ const menuNavBarToggle = () => {
 }
 
 const menuOpenLg = () => {
-  mainStore.asideLgToggle(true)
+  mainStore.asideLgToggle(true);
 }
 
 const logout = () => {
-  //
+
 }
 </script>
 
@@ -86,9 +87,6 @@ const logout = () => {
           size="24"
         />
       </NavBarItem>
-      <NavBarItem>
-        <NavBarSearch />
-      </NavBarItem>
     </div>
     <div class="flex-none items-stretch flex h-14 lg:hidden">
       <NavBarItem @click.prevent="menuNavBarToggle">
@@ -107,59 +105,12 @@ const logout = () => {
         class="max-h-screen-menu overflow-y-auto lg:overflow-visible lg:flex lg:items-stretch lg:justify-end lg:ml-auto"
       >
         <NavBarMenu has-divider>
-          <NavBarItemLabel
-            :icon="mdiMenu"
-            label="Sample menu"
-          />
-
-          <template #dropdown>
-            <NavBarItem>
-              <NavBarItemLabel
-                :icon="mdiClockOutline"
-                label="Item One"
-              />
-            </NavBarItem>
-            <NavBarItem>
-              <NavBarItemLabel
-                :icon="mdiCloud"
-                label="Item Two"
-              />
-            </NavBarItem>
-            <DividerHorizontal nav-bar />
-            <NavBarItem>
-              <NavBarItemLabel
-                :icon="mdiCrop"
-                label="Item Last"
-              />
-            </NavBarItem>
-          </template>
-        </NavBarMenu>
-        <NavBarMenu has-divider>
           <NavBarItemLabel :label="userName">
             <UserAvatar class="w-6 h-6 mr-3 inline-flex" />
           </NavBarItemLabel>
 
           <template #dropdown>
-            <NavBarItem to="/profile">
-              <NavBarItemLabel
-                :icon="mdiAccount"
-                label="My Profile"
-              />
-            </NavBarItem>
-            <NavBarItem>
-              <NavBarItemLabel
-                :icon="mdiCogOutline"
-                label="Settings"
-              />
-            </NavBarItem>
-            <NavBarItem>
-              <NavBarItemLabel
-                :icon="mdiEmail"
-                label="Messages"
-              />
-            </NavBarItem>
-            <DividerHorizontal nav-bar />
-            <NavBarItem>
+            <NavBarItem to="/login">
               <NavBarItemLabel
                 :icon="mdiLogout"
                 label="Log Out"
@@ -167,38 +118,6 @@ const logout = () => {
             </NavBarItem>
           </template>
         </NavBarMenu>
-        <NavBarItem
-          has-divider
-          is-desktop-icon-only
-          @click.prevent="toggleLightDark"
-        >
-          <NavBarItemLabel
-            :icon="mdiThemeLightDark"
-            label="Light/Dark"
-            is-desktop-icon-only
-          />
-        </NavBarItem>
-        <NavBarItem
-          href="https://github.com/justboil/admin-one-vue-tailwind"
-          has-divider
-          is-desktop-icon-only
-        >
-          <NavBarItemLabel
-            :icon="mdiGithub"
-            label="GitHub"
-            is-desktop-icon-only
-          />
-        </NavBarItem>
-        <NavBarItem
-          is-desktop-icon-only
-          @click="logout"
-        >
-          <NavBarItemLabel
-            :icon="mdiLogout"
-            label="Log out"
-            is-desktop-icon-only
-          />
-        </NavBarItem>
       </div>
     </div>
   </nav>

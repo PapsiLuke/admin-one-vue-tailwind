@@ -14,19 +14,16 @@ const titleStack = ref(['Admin', 'Tables'])
 </script>
 
 <template>
-  <SectionTitleBar :title-stack="titleStack" />
-  <SectionHeroBar>Tables</SectionHeroBar>
+  <SectionHeroBar>Statistics</SectionHeroBar>
   <SectionMain>
-    <NotificationBar
-      color="info"
-      :icon="mdiMonitorCellphone"
-    >
-      <b>Responsive table.</b> Collapses on mobile
-    </NotificationBar>
+       <SectionTitleBarSub
+      :icon="mdiTableBorder"
+      title="Board Of Directors"
+    />
 
     <CardBox
       class="mb-6"
-      title="Clients"
+      title="Candidates"
       :icon="mdiAccountMultiple"
       has-table
     >
@@ -35,15 +32,8 @@ const titleStack = ref(['Admin', 'Tables'])
 
     <SectionTitleBarSub
       :icon="mdiTableBorder"
-      title="Wrapped variation"
+      title="Election Committee"
     />
-
-    <NotificationBar
-      color="success"
-      :icon="mdiTableBorder"
-    >
-      <b>Tightly wrapped</b> &mdash; table header becomes card header
-    </NotificationBar>
 
     <CardBox
       class="mb-6"
@@ -51,21 +41,16 @@ const titleStack = ref(['Admin', 'Tables'])
     >
       <TableSampleClients checkable />
     </CardBox>
-
     <SectionTitleBarSub
-      :icon="mdiTableOff"
-      title="Empty variation"
+      :icon="mdiTableBorder"
+      title="Audit & Supervisory Committee"
     />
 
-    <NotificationBar
-      color="danger"
-      :icon="mdiTableOff"
+    <CardBox
+      class="mb-6"
+      has-table
     >
-      <b>Empty table.</b> When there's nothing to show
-    </NotificationBar>
-
-    <CardBox empty />
+      <TableSampleClients checkable />
+    </CardBox>
   </SectionMain>
-
-  <SectionBottomOtherPages />
 </template>
